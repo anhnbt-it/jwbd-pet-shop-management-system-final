@@ -157,10 +157,10 @@ public class ProductDao implements iProductDao {
         return products;
     }
 
-    public static final String SORT_PRODUCT_N_A="SELECT * FROM petshop.products order by name asc";
-    public static final String SORT_PRODUCT_N_D="SELECT * FROM petshop.products order by name desc";
-    public static final String SORT_PRODUCT_P_A="SELECT * FROM petshop.products order by price asc";
-    public static final String SORT_PRODUCT_P_D="SELECT * FROM petshop.products order by price desc";
+    public static final String SORT_PRODUCT_N_A="SELECT * FROM products order by name asc";
+    public static final String SORT_PRODUCT_N_D="SELECT * FROM products order by name desc";
+    public static final String SORT_PRODUCT_P_A="SELECT * FROM products order by price asc";
+    public static final String SORT_PRODUCT_P_D="SELECT * FROM products order by price desc";
     public ArrayList<Product> sort_Product_N_A(){
         return sort_Product(SORT_PRODUCT_N_A);
     }
@@ -179,12 +179,11 @@ public class ProductDao implements iProductDao {
         try{
             Connection connection=DBConnection.getConnection();
             PreparedStatement statement=connection.prepareStatement(condition);
-//            statement.setString(1,name);
-//            statement.setString(2,sort);
+
             ResultSet rs=statement.executeQuery();
             while (rs.next()){
                 int id = rs.getInt("id");
-                String names = rs.getString("name");
+                String name = rs.getString("name");
                 int category_id = rs.getInt("category_id");
                 String description = rs.getString("description");
                 int quantityInStock = rs.getInt("quantityInStock");
@@ -193,7 +192,7 @@ public class ProductDao implements iProductDao {
                 double realPrice = Math.round(price - price*discount/100);
                 String img = rs.getString("img");
                 Timestamp createdDate = rs.getTimestamp("created_at");
-                Product product = new Product(id, names, category_id, description, quantityInStock, price, discount, img, realPrice, createdDate);
+                Product product = new Product(id, name, category_id, description, quantityInStock, price, discount, img, realPrice, createdDate);
                 products.add(product);
             }
         }catch (Exception e){
@@ -202,10 +201,10 @@ public class ProductDao implements iProductDao {
         return products;
     }
 
-    public static final String SORT_PRODUCT_CATE_ASC="SELECT * FROM petshop.products where category_id = ? order by name asc";
-    public static final String SORT_PRODUCT_CATE_DESC="SELECT * FROM petshop.products where category_id = ? order by name desc";
-    public static final String SORT_PRODUCT_CATE_P_A="SELECT * FROM petshop.products where category_id = ? order by price asc";
-    public static final String SORT_PRODUCT_CATE_P_D="SELECT * FROM petshop.products where category_id = ? order by price desc";
+    public static final String SORT_PRODUCT_CATE_ASC="SELECT * FROM products where category_id = ? order by name asc";
+    public static final String SORT_PRODUCT_CATE_DESC="SELECT * FROM products where category_id = ? order by name desc";
+    public static final String SORT_PRODUCT_CATE_P_A="SELECT * FROM products where category_id = ? order by price asc";
+    public static final String SORT_PRODUCT_CATE_P_D="SELECT * FROM products where category_id = ? order by price desc";
     public ArrayList<Product> sort_Product_Cate_NA(int id){
         return sort_Product_Cate(id, SORT_PRODUCT_CATE_ASC);
     }

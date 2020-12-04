@@ -5,21 +5,11 @@
   Time: 09:36
   To change this template use File | Settings | File Templates.
 --%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@include file="/common/libs.jsp" %>
-<html>
-<head>
-    <title>Product</title>
-    <%--    <link rel="stylesheet" href="template/css/sidebar.css">--%>
-    <%--    <link rel="stylesheet" href="template/css/product/product.css">--%>
-    <%--    <link rel="stylesheet" href="template/bootstrap/css/bootstrap.css">--%>
-    <link href="<c:url value="/template/bootstrap/css/bootstrap.css"/>" rel="stylesheet">
-    <link href="<c:url value="/template/css/sidebar.css"/>" rel="stylesheet">
-    <link href="<c:url value="/template/css/product/product.css"/>" rel="stylesheet">
-</head>
-<body>
-<%@include file="/common/web/header.jsp" %>
-<div class="mb-4 mt-4 container">
+<c:set var="pageTitle" scope="request" value="Add New Customer"/>
+<jsp:include page="/common/web/header.jsp"></jsp:include>
+<div class="container mb-4 mt-4" style="padding-top: 180px;">
 
     <div class="page_cotact mb-3 mt-3">
         <h2 class="title-head-contact a-left"><span>Liên hệ với chúng tôi</span></h2>
@@ -66,6 +56,5 @@
     </div>
 </div>
 <%@include file="/common/web/footer.jsp" %>
-</body>
-</html>
+
 

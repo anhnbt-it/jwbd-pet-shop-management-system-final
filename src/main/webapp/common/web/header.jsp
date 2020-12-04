@@ -14,13 +14,13 @@
     <link href="${pageContext.request.contextPath}/template/css/header-footer/header.css" rel="stylesheet">
     <link href="${pageContext.request.contextPath}/template/css/header-footer/search.css" rel="stylesheet">
 </head>
-<body>
-<header class="bg-white fixed-top">
+<body >
+<header class=" fixed-top" style="background : darkgrey">
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-5">
                 <a href="${pageContext.request.contextPath}/home" target="_self">
-                    <img src="${pageContext.request.contextPath}/img/logo.png" class="w-25">
+                    <img src="${pageContext.request.contextPath}/img/logo.png" class="w-30">
                 </a>
                 <p class="lead">Niềm vui của bạn - Hạnh phúc của tôi</p>
             </div>
@@ -46,6 +46,34 @@
                             </c:otherwise>
                         </c:choose></span> <i
                                 class="fas fa-shopping-cart"></i></a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <c:choose>
+                            <c:when test="${sessionScope['user'] == null}">
+                                <a class="nav-link dropdown-toggle" href="#" id="accountDropdown" role="button"
+                                   data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <span class="fas fa-user mr-1"></span> Tài khoản
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="accountDropdown">
+                                    <a class="dropdown-item" href="${pageContext.request.contextPath}/account/login">Đăng
+                                        nhập</a>
+                                    <a class="dropdown-item" href="${pageContext.request.contextPath}/account/register">Đăng
+                                        ký</a>
+                                </div>
+                            </c:when>
+                            <c:otherwise>
+                                <a class="nav-link dropdown-toggle" href="#" id="accountDropdown" role="button"
+                                   data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <span class="fas fa-user mr-1"></span> ${sessionScope['user'].getName()}
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="accountDropdown">
+                                    <a class="dropdown-item" href="#">Profile</a>
+                                    <a class="dropdown-item" href="#">Change password</a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="/account/sign-out">Sign out</a>
+                                </div>
+                            </c:otherwise>
+                        </c:choose>
                     </li>
                 </ul>
             </div>
@@ -94,37 +122,10 @@
                         </div>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="${pageContext.request.contextPath}/lien-he"><span
+                        <a class="nav-link" href="${pageContext.request.contextPath}/contact"><span
                                 class="fas fa-phone mr-1"></span> Liên hệ</a>
                     </li>
-                    <li class="nav-item dropdown">
-                        <c:choose>
-                            <c:when test="${sessionScope['user'] == null}">
-                                <a class="nav-link dropdown-toggle" href="#" id="accountDropdown" role="button"
-                                   data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    <span class="fas fa-user mr-1"></span> Tài khoản
-                                </a>
-                                <div class="dropdown-menu" aria-labelledby="accountDropdown">
-                                    <a class="dropdown-item" href="${pageContext.request.contextPath}/account/login">Đăng
-                                        nhập</a>
-                                    <a class="dropdown-item" href="${pageContext.request.contextPath}/account/register">Đăng
-                                        ký</a>
-                                </div>
-                            </c:when>
-                            <c:otherwise>
-                                <a class="nav-link dropdown-toggle" href="#" id="accountDropdown" role="button"
-                                   data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    <span class="fas fa-user mr-1"></span> Welcome ${sessionScope['user'].getName()}
-                                </a>
-                                <div class="dropdown-menu" aria-labelledby="accountDropdown">
-                                    <a class="dropdown-item" href="#">Profile</a>
-                                    <a class="dropdown-item" href="#">Change password</a>
-                                    <div class="dropdown-divider"></div>
-                                    <a class="dropdown-item" href="/account/sign-out">Sign out</a>
-                                </div>
-                            </c:otherwise>
-                        </c:choose>
-                    </li>
+
                 </ul>
                 <ul class="nav navbar-nav ml-auto">
                     <li class="nav-item active">

@@ -1,4 +1,4 @@
-package controller.web;
+package controller.web.contact;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;

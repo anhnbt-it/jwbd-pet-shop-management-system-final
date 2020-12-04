@@ -195,12 +195,7 @@ public class CartServlet extends HttpServlet {
         ArrayList<Product> products = productDao.selectAllProduct();
         Customer customer;
         boolean canInsert = true;
-//        if (session.getAttribute("user")==null) {
-//            System.err.println("Phai dang nhap");
-//            canInsert = false;
-//        } else {
-//            customer = (Customer) session.getAttribute("user");
-//        }
+
         for (OrderDetail orderDetail: order.getList()) {
             int id = orderDetail.getProduct().getId();
             Product product = productDao.selectProduct(id);

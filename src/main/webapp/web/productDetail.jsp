@@ -16,7 +16,7 @@
 </head>
 <body>
 <%@include file="/common/web/header.jsp"%>
-<div class='container'>
+<div class=' container' style="margin-top: 150px">
     <h1> Chi Tiet San Pham</h1>
     <hr>
     <div class="row">
@@ -60,7 +60,7 @@
             <div class="col-lg-3 col-md-6 mb-4">
                 <div class="card h-100 cardBorder">
                     <div class="discount">
-                        <p>- ${product1.getDiscount()}% </p>
+                        <p>- ${product.getDiscount()}% </p>
                     </div>
                     <a href="/products?action=view&id=${product.getId()}"><img class="card-img-top" src="<c:url value="${product.getImg()}"/>" height="200" alt="loading"></a>
                     <div class="card-body cardBody">

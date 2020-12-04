@@ -8,11 +8,11 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <footer class="pt-4">
-    <div class="container text-center text-md-left">
+    <div class="container text-center text-md-left" style="background: darkgrey">
         <div class="row text-center text-md-left">
             <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
                 <h6 class="text-uppercase mb-4 font-weight-bold">Pet Shop</h6>
-                <p>Là lựa chọn hàng đầu cho các bạn muốn dở hữu một chú pet cưng tuyệt vời nhất, quý hiếm nhất.</p>
+                <p>Là lựa chọn hàng đầu cho các bạn muốn sở hữu một chú pet cưng tuyệt vời nhất, quý hiếm nhất.</p>
             </div>
             <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
                 <h6 class="text-uppercase mb-4 font-weight-bold">Products</h6>
@@ -105,5 +105,3 @@
         xhttp.send("action=add&id=" + id);
     }
 </script>
-</body>
-</html>
