@@ -7,7 +7,7 @@
 --%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<c:set var="pageTitle" scope="request" value="Add New Customer"/>
+<c:set var="pageTitle" scope="request" value="Home"/>
 <jsp:include page="/common/web/header.jsp"></jsp:include>
 <div class="container" style="padding-top: 180px;">
     <c:if test="${requestScope['discount'] != null}">
@@ -22,19 +22,19 @@
                     <div class="carousel-inner" role="listbox">
                         <div class="carousel-item active">
                             <a href="${pageContext.request.contextPath}/products?action=view&id=${requestScope['discount'].get(0).getId()}">
-                                <img class="img-fluid" src="<c:out value='${requestScope["discount"].get(0).getImg()}'/>"
+                                <img class="img-fluid" src="${pageContext.request.contextPath}/img/slide3.jpg"
                                      width="1100" height="300" alt="First slide">
                             </a>
                         </div>
                         <div class="carousel-item">
                             <a href="${pageContext.request.contextPath}/products?action=view&id=${requestScope['discount'].get(1).getId()}">
-                                <img class="img-fluid" src="<c:out value='${requestScope["discount"].get(1).getImg()}'/>"
+                                <img class="img-fluid" src="${pageContext.request.contextPath}/img/slide1.png"
                                      width="1100" height="300" alt="Second slide">
                             </a>
                         </div>
                         <div class="carousel-item">
                             <a href="${pageContext.request.contextPath}/products?action=view&id=${requestScope['discount'].get(2).getId()}">
-                                <img class="img-fluid" src="<c:out value='${requestScope["discount"].get(2).getImg()}'/>"
+                                <img class="img-fluid" src="${pageContext.request.contextPath}/img/slide2.jpg"
                                      width="1100" height="300" alt="Third slide">
                             </a>
                         </div>
@@ -77,7 +77,7 @@
                                   style="text-decoration-line: line-through;">$ ${product.getPrice()}</span>
                             <p class="card-text">${product.getDescription()}</p>
                         </div>
-                        <button class="btn btn-success btn-block text-white" onclick="loadDoc(${product.getId()})"><i
+                        <button class="btn btn-success btn-block text-white" onclick="addToCart(${product.getId()})"><i
                                 class="fas fa-shopping-cart"></i> Thêm vào giỏ hàng
                         </button>
                     </div>
@@ -112,7 +112,7 @@
                                   style="text-decoration-line: line-through;">$ ${product.getPrice()}</span>
                             <p class="card-text">${product.getDescription()}</p>
                         </div>
-                            <button class="btn btn-success btn-block text-white" onclick="loadDoc(${product.getId()})"><i
+                            <button class="btn btn-success btn-block text-white" onclick="addToCart(${product.getId()})"><i
                                     class="fas fa-shopping-cart"></i> Thêm vào giỏ hàng
                             </button>
                     </div>

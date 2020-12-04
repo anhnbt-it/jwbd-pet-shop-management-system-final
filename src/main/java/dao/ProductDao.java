@@ -1,13 +1,9 @@
 package dao;
 
-import com.sun.org.apache.xpath.internal.operations.Or;
-import model.entities.Order;
 import model.entities.Product;
-import org.omg.CORBA.PUBLIC_MEMBER;
 
 import java.sql.*;
 import java.util.ArrayList;
-import java.util.List;
 
 public class ProductDao implements iProductDao {
     private final DBConnection dbConnection = new DBConnection();

@@ -7,7 +7,7 @@
 --%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<c:set var="pageTitle" scope="request" value="Add New Customer"/>
+<c:set var="pageTitle" scope="request" value="Product"/>
 <jsp:include page="/common/web/header.jsp"></jsp:include>
 <div class="container" style="padding-top: 180px;">
     <nav aria-label="breadcrumb">
@@ -121,7 +121,7 @@
                                                                                                      style="text-decoration-line: line-through;">$ ${product.getPrice()}</span>
                                 <p class="card-text">${product.getDescription()}</p>
                             </div>
-                            <button class="btn btn-success btn-block text-white" onclick="loadDoc(${product.getId()})">
+                            <button class="btn btn-success btn-block text-white" onclick="addToCart(${product.getId()})">
                                 <i
                                         class="fas fa-shopping-cart"></i> Thêm vào giỏ hàng
                             </button>

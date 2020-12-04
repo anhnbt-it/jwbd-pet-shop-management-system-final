@@ -56,5 +56,10 @@
     </div>
 </div>
 <%@include file="/common/web/footer.jsp" %>
+<<<<<<< HEAD
 
+=======
+</body>
+</html>
+>>>>>>> da45ed0481a23f0c9cff4c475d6441fbe88189b8
 
