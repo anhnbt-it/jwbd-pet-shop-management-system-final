@@ -20,6 +20,7 @@
                             class="btn btn-primary btn-sm"
                             data-toggle="tooltip" data-placement="top" title="Add New"><i class="fas fa-plus"></i> Add
                         New</a>
+                        <a href="/administrator/customers" class="btn btn-warning"><i class="fas fa-sync-alt"></i></a>
                     </h6>
                 </div>
                 <div class="card-body">

@@ -26,6 +26,7 @@ public class HomeServlet extends HttpServlet {
         ArrayList<Product> discountList = productDao.selectAllProductDiscount();
         ArrayList<Product> dateList = productDao.selectAllProductDate();
         ArrayList<Product> newList = productDao.selectAllProductNew();
+
         List<Categories> categoriesDog=categoryDao.selectCatorDog(1);
         List<Categories> categoriesCat=categoryDao.selectCatorDog(2);
 //        System.out.printf("asvdjhs:" + discountList.size() + dateList.size() + newList.size());

@@ -61,6 +61,7 @@ public class ProductServlet extends HttpServlet {
                 products =productDao.sort_Product_P_A();
 
             } else {
+                products=productDao.selectAllProduct();
 
             }
 
