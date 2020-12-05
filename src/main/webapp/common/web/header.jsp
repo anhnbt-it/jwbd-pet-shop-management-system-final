@@ -19,12 +19,13 @@
     <link href="${pageContext.request.contextPath}/template/css/header-footer/search.css" rel="stylesheet">
 </head>
 <body >
-<header class=" fixed-top" style="background : darkgrey">
+<header class=" fixed-top" style="background : white">
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-5">
                 <a href="${pageContext.request.contextPath}/home" target="_self">
-                    <img src="${pageContext.request.contextPath}/img/logo.png" class="w-30">
+<%--                    <img src="${pageContext.request.contextPath}/img/logo.png" class="w-30">--%>
+                    <img src="<c:out value="/img/logo.png"/>"/>
                 </a>
                 <p class="lead">Niềm vui của bạn - Hạnh phúc của tôi</p>
             </div>
